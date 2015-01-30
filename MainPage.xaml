@@ -183,6 +183,11 @@
                         </ScrollViewer>
                     </ControlTemplate>
                 </ItemsControl.Template>
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <VirtualizingStackPanel Orientation="Vertical" />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <Image Source="{Binding}" Height="456" Width="456" Stretch="None" Margin="0,0,0,12"/>
@@ -202,7 +207,7 @@
                 <System:String>http://dummyimage.com/456/5/FF/.jpg?text=L</System:String>
                 <System:String>http://dummyimage.com/456/2/FF/.jpg?text=M</System:String>
                 <System:String>http://dummyimage.com/456/3/FF/.jpg?text=N</System:String>
-                <System:String>http://dummyimage.com/456/0/FF/.jpg?text=O</System:String>
+                <System:String>http://dummyimage.com/456/00/FF/.jpg?text=O</System:String>
                 <System:String>http://dummyimage.com/456/1/FF/.jpg?text=P</System:String>
             </ItemsControl>
         </Grid>
