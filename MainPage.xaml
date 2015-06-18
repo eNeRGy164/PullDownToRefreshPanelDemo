@@ -253,7 +253,7 @@
                         </ItemsControl.ItemsPanel>
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
-                                <Image Source="{Binding}" Height="480" Width="480" Stretch="None" Margin="0,0,0,12"/>
+                                <Image Source="{Binding}" Height="480" Width="480" Stretch="None" Margin="0,0,0,12" Tap="ImageOnTap"/>
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
                     </ItemsControl>

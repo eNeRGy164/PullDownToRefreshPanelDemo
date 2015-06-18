@@ -81,6 +81,11 @@ namespace Hompus.PullDownToRefreshDemo
         private ScrollViewer targetScrollViewer;
 
         /// <summary>
+        /// The value indicating whether the current panel is loaded and is hooked up to the Touch events.
+        /// </summary>
+        private bool isLoaded;
+
+        /// <summary>
         /// Creates a new PullDownToRefreshPanel.
         /// </summary>
         public PullDownToRefreshPanel()
@@ -271,7 +276,13 @@ namespace Hompus.PullDownToRefreshDemo
         /// </summary>
         private void PullDownToRefreshPanelLoaded(object sender, EventArgs e)
         {
-            this.Loaded -= this.PullDownToRefreshPanelLoaded;
+            if (this.isLoaded)
+            {
+                return;
+            }
+
+            this.isLoaded = true;
+
             this.Unloaded += this.PullDownToRefreshPanelUnloaded;
 
             Touch.FrameReported += this.TouchFrameReported;
@@ -288,6 +299,13 @@ namespace Hompus.PullDownToRefreshDemo
         /// </summary>
         private void PullDownToRefreshPanelUnloaded(object sender, RoutedEventArgs e)
         {
+            if (!this.isLoaded)
+            {
+                return;
+            }
+
+            this.isLoaded = false;
+
             this.Unloaded -= this.PullDownToRefreshPanelUnloaded;
 
             Touch.FrameReported -= this.TouchFrameReported;

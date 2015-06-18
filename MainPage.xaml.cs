@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows;
+using System.Windows.Input;
 using Microsoft.Phone.Controls;
 
 namespace Hompus.PullDownToRefreshDemo
@@ -52,6 +53,11 @@ namespace Hompus.PullDownToRefreshDemo
         private void refreshPanelRefreshRequested(object sender, EventArgs e)
         {
             MessageBox.Show("Refresh triggered");
+        }
+
+        private void ImageOnTap(object sender, GestureEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/DetailPage.xaml", UriKind.Relative));
         }
     }
 }
